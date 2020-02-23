@@ -1,6 +1,6 @@
 <?php
 
-if($_POST) {
+
     $visitor_name = "";
     $visitor_email = "";
     $visitor_subject = "";
@@ -29,14 +29,9 @@ if($_POST) {
     .'Content-type: text/html; charset=utf-8' . "\r\n"
     .'From: ' . $visitor_email . "\r\n";
 
-    if(mail($recipient, $visitor_subject, $visitor_message, $headers)) {
-        echo "<p>Thank you for contacting me! , $visitor_name. Ill try to get back ASAP!.</p>";
-    } else {
-        echo '<p>We are sorry but the email did not go through.</p>';
-    }
+    mail($recipient, $visitor_subject, $visitor_message, $headers);
 
-} else {
-    echo '<p>Something went wrong</p>';
-}
+
+
 
 ?>
