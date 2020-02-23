@@ -1,11 +1,12 @@
 <?php
 
-if(isset($_POST['submit'])) {
+if(isset($_POST)) {
+
     $visitor_name = isset($_POST['visitor_name']);
     $visitor_email = isset($_POST['visitor_name']);
     $visitor_subject = isset($_POST['visitor_subject']);
     $visitor_message = isset($_POST['visitor_message']);
-    $recipient = "dnv19191@gmail.com";
+    $recipient = "dhernandez3207@mpc.edu";
 
 
     $headers  = 'MIME-Version: 1.0' . "\r\n"
