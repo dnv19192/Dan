@@ -17,7 +17,7 @@ if($_POST) {
     }
 
     if(isset($_POST['visitor_subject'])) {
-        visitor_subject = filter_var($_POST['visitor_subject'], FILTER_SANITIZE_STRING);
+        $visitor_subject = filter_var($_POST['visitor_subject'], FILTER_SANITIZE_STRING);
     }
 
     if(isset($_POST['visitor_message'])) {
@@ -29,7 +29,7 @@ if($_POST) {
     .'Content-type: text/html; charset=utf-8' . "\r\n"
     .'From: ' . $visitor_email . "\r\n";
 
-    if(mail($recipient, $visitor_subject, $email_title, $visitor_message, $headers)) {
+    if(mail($recipient, $visitor_subject, $visitor_message, $headers)) {
         echo "<p>Thank you for contacting me! , $visitor_name. Ill try to get back ASAP!.</p>";
     } else {
         echo '<p>We are sorry but the email did not go through.</p>';
